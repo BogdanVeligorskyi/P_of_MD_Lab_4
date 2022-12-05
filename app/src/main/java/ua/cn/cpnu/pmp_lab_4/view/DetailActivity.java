@@ -20,13 +20,18 @@ public class DetailActivity extends AppCompatActivity {
         String savedWebPages[] = getIntent().getStringArrayExtra("web_pages");
         String savedDomains[] = getIntent().getStringArrayExtra("domains");
 
-        //TextView textViewDetails = (TextView) findViewById(R.id.text_view_details);
-        TextView textViewDetailsNameValue = (TextView) findViewById(R.id.text_view_details_name_value);
-        TextView textViewDetailsCodeValue = (TextView) findViewById(R.id.text_view_details_code_value);
-        TextView textViewDetailsStateValue = (TextView) findViewById(R.id.text_view_details_state_value);
-        TextView textViewDetailsDomainsValue = (TextView) findViewById(R.id.text_view_details_domains_values);
-        TextView textViewDetailsCountryValue = (TextView) findViewById(R.id.text_view_details_country_value);
-        TextView textViewDetailsWebValues = (TextView) findViewById(R.id.text_view_details_web_values);
+        TextView textViewDetailsNameValue = (TextView)
+                findViewById(R.id.text_view_details_name_value);
+        TextView textViewDetailsCodeValue = (TextView)
+                findViewById(R.id.text_view_details_code_value);
+        TextView textViewDetailsStateValue = (TextView)
+                findViewById(R.id.text_view_details_state_value);
+        TextView textViewDetailsDomainsValue = (TextView)
+                findViewById(R.id.text_view_details_domains_values);
+        TextView textViewDetailsCountryValue = (TextView)
+                findViewById(R.id.text_view_details_country_value);
+        TextView textViewDetailsWebValues = (TextView)
+                findViewById(R.id.text_view_details_web_values);
 
         if (savedStateProvince == null) {
             textViewDetailsStateValue.setText("None");

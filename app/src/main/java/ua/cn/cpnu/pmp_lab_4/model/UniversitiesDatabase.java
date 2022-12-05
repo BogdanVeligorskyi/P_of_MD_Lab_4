@@ -1,8 +1,9 @@
 package ua.cn.cpnu.pmp_lab_4.model;
 
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 
-
-/*@Database(entities = {LocalUniversity.class}, version = 1)
+@Database(entities = {LocalUniversity.class}, version = 1)
 public abstract class UniversitiesDatabase extends RoomDatabase {
     public abstract UniversitiesDao getUniversitiesDao();
-}*/
+}

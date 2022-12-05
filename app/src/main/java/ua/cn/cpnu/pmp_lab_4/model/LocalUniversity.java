@@ -1,15 +1,17 @@
 package ua.cn.cpnu.pmp_lab_4.model;
 
-
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
 
-
-/*@Entity(tableName = "universities", indices = {@Index("identifier")})
+@Entity(tableName = "universities")
 public class LocalUniversity {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "identifier")
-    String identifier = "0";
+    int identifier;
     @ColumnInfo(name = "alpha_two_code")
     String alphaTwoCode;
     @ColumnInfo(name = "country")
@@ -23,23 +25,20 @@ public class LocalUniversity {
     @ColumnInfo(name = "web_pages")
     String webPages;
 
-    public LocalUniversity(@NonNull String identifier, String alphaTwoCode,
-                      String country, String stateProvince, String domains, String name, String webPages) {
-        this.identifier = identifier;
+    public LocalUniversity(String alphaTwoCode,
+                           String country, String stateProvince, String domains,
+                           String name, String webPages) {
+        //this.identifier = identifier;
         this.alphaTwoCode = alphaTwoCode;
         this.country = country;
         this.stateProvince = stateProvince;
-        //this.domains = domains;
+        this.domains = domains;
         this.name = name;
-        //this.webPages = webPages;
+        this.webPages = webPages;
     }
-
-    public LocalUniversity() {
-    }
-
 
     // getters
-    public String getIdentifier() {
+    public int getIdentifier() {
         return identifier;
     }
 
@@ -68,7 +67,7 @@ public class LocalUniversity {
     }
 
     // setters
-    public void setIdentifier(@NonNull String identifier) {
+    public void setIdentifier(@NonNull int identifier) {
         this.identifier = identifier;
     }
 
@@ -92,8 +91,8 @@ public class LocalUniversity {
         this.name = name;
     }
 
-    /*public void setWebPages(String webPages) {
+    public void setWebPages(String webPages) {
         this.webPages = webPages;
     }
 
-}*/
+}
