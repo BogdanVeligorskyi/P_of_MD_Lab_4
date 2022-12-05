@@ -1,4 +1,4 @@
-package ua.cn.cpnu.pmp_lab_4;
+package ua.cn.cpnu.pmp_lab_4.view;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import ua.cn.cpnu.pmp_lab_4.R;
 
 public class CustomListAdapter extends ArrayAdapter {
 
@@ -19,7 +21,7 @@ public class CustomListAdapter extends ArrayAdapter {
     private final String[] infoArray;
 
     public CustomListAdapter(Activity context, String[] nameArrayParam, String[] infoArrayParam){
-        super(context,R.layout.listview_row , nameArrayParam);
+        super(context, R.layout.listview_row , nameArrayParam);
         this.context = context;
         this.nameArray = nameArrayParam;
         this.infoArray = infoArrayParam;

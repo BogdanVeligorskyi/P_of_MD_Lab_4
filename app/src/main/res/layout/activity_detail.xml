@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
         android:text="Details "
@@ -112,7 +113,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/text_view_details_country_values"
+        android:id="@+id/text_view_details_country_value"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginStart="25dp"

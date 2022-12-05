@@ -1,18 +1,15 @@
 package ua.cn.cpnu.pmp_lab_4.model;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Index;
-import android.arch.persistence.room.PrimaryKey;
 
 import androidx.annotation.NonNull;
 
-@Entity(tableName = "universities", indices = {@Index("remote_id")})
+
+/*@Entity(tableName = "universities", indices = {@Index("identifier")})
 public class LocalUniversity {
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "identifier")
-    String identifier;
+    String identifier = "0";
     @ColumnInfo(name = "alpha_two_code")
     String alphaTwoCode;
     @ColumnInfo(name = "country")
@@ -20,21 +17,21 @@ public class LocalUniversity {
     @ColumnInfo(name = "state_province")
     String stateProvince;
     @ColumnInfo(name = "domains")
-    String[] domains;
+    String domains;
     @ColumnInfo(name = "name")
     String name;
     @ColumnInfo(name = "web_pages")
-    String[] webPages;
+    String webPages;
 
     public LocalUniversity(@NonNull String identifier, String alphaTwoCode,
-                      String country, String stateProvince, String[] domains, String name, String[] webPages) {
+                      String country, String stateProvince, String domains, String name, String webPages) {
         this.identifier = identifier;
         this.alphaTwoCode = alphaTwoCode;
         this.country = country;
         this.stateProvince = stateProvince;
-        this.domains = domains;
+        //this.domains = domains;
         this.name = name;
-        this.webPages = webPages;
+        //this.webPages = webPages;
     }
 
     public LocalUniversity() {
@@ -58,7 +55,7 @@ public class LocalUniversity {
         return stateProvince;
     }
 
-    public String[] getDomains() {
+    public String getDomains() {
         return domains;
     }
 
@@ -66,7 +63,7 @@ public class LocalUniversity {
         return name;
     }
 
-    public String[] getWebPages() {
+    public String getWebPages() {
         return webPages;
     }
 
@@ -87,7 +84,7 @@ public class LocalUniversity {
         this.stateProvince = stateProvince;
     }
 
-    public void setDomains(String[] domains) {
+    public void setDomains(String domains) {
         this.domains = domains;
     }
 
@@ -95,8 +92,8 @@ public class LocalUniversity {
         this.name = name;
     }
 
-    public void setWebPages(String[] webPages) {
+    /*public void setWebPages(String webPages) {
         this.webPages = webPages;
     }
 
-}
+}*/

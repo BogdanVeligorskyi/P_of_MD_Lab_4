@@ -4,12 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class RemoteUniversity {
 
-    @SerializedName("identifier")
+    @SerializedName("alpha_two_code")
     private String alphaTwoCode;
+
     private String country;
+
+    @SerializedName("state-province")
     private String stateProvince;
     private String[] domains;
     private String name;
+
+    @SerializedName("web_pages")
     private String[] webPages;
 
     public String getAlphaTwoCode() {
