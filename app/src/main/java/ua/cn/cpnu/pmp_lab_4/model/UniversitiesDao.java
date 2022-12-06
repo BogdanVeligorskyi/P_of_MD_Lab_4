@@ -1,48 +1,31 @@
 package ua.cn.cpnu.pmp_lab_4.model;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Transaction;
-import android.arch.persistence.room.Update;
-
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Transaction;
 import java.util.List;
 
+// class with SQLite-queries to a local database
 @Dao
 public abstract class UniversitiesDao {
 
-    @Query("SELECT * FROM universities WHERE country LIKE :pattern")
-    public abstract List<LocalUniversity> getUniversities(String pattern);
-
-    @Insert
-    public abstract long[] insert(List<LocalUniversity> universities);
+    @Query("SELECT * FROM universities")
+    public abstract List<LocalUniversity> getUniversities();
 
     @Query("DELETE FROM universities")
     public abstract void deleteAll();
 
-    @Transaction
-    public void updateImages(List<LocalUniversity> newUniversities) {
-        deleteAll();
-        insert(newUniversities);
-    }
-
     @Insert
     public abstract void insertUniversities(List<LocalUniversity> universities);
 
+    @Transaction
+    public void updateImages(List<LocalUniversity> newUniversities) {
+        deleteAll();
+        insertUniversities(newUniversities);
+    }
+
     @Insert
     public abstract long insertOneUniversity(LocalUniversity university);
-
-    @Insert
-    public abstract long[] insertUniversitiesAndReturnIds(LocalUniversity[] universities);
-
-    @Update
-    public abstract void updateUniversity(LocalUniversity university);
-
-    @Delete
-    public abstract void deleteUniversity(LocalUniversity university);
-
-    @Delete
-    public abstract void deleteUniversities(List<LocalUniversity> universities);
 
 }

@@ -2,14 +2,20 @@ package ua.cn.cpnu.pmp_lab_4.model;
 
 import com.google.gson.annotations.SerializedName;
 
+// class for representing University entity, loaded from web-page
 public class RemoteUniversity {
 
-    @SerializedName("identifier")
+    @SerializedName("alpha_two_code")
     private String alphaTwoCode;
+
     private String country;
+
+    @SerializedName("state-province")
     private String stateProvince;
     private String[] domains;
     private String name;
+
+    @SerializedName("web_pages")
     private String[] webPages;
 
     public String getAlphaTwoCode() {
@@ -35,4 +41,5 @@ public class RemoteUniversity {
     public String[] getWebPages() {
         return webPages;
     }
+
 }

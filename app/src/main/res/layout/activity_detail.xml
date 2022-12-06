@@ -1,145 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_view_details"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
-        android:text="Details "
-        android:textSize="20sp">
-    </TextView>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_view_details_name"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="Full name of university: "
-        android:textSize="20sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/activityDetailDetails"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_name_value"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Chernihiv Polytechnic National University"
-        android:textSize="20sp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_name"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:text="@string/activityDetailName"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_code"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="Alpha two code:"
-        android:textSize="20sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_name_value"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginEnd="@dimen/activityDetailMargin"
+            android:text="@string/activityDetailNameValue"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_code_value"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="UA"
-        android:textSize="20sp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_code"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:text="@string/activityDetailCode"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_state"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="State-province:"
-        android:textSize="20sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_code_value"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginEnd="@dimen/activityDetailMargin"
+            android:text="@string/activityDetailCodeValue"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_state_value"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="None"
-        android:textSize="20sp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_state"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:text="@string/activityDetailState"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_domains"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="Domains:"
-        android:textSize="20sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_state_value"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginEnd="@dimen/activityDetailMargin"
+            android:text="@string/activityDetailStateValue"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_domains_values"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="cpnu.cn.ua"
-        android:textSize="20sp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_domains"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:text="@string/activityDetailDomains"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_country"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="Country:"
-        android:textSize="20sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_domains_values"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginEnd="@dimen/activityDetailMargin"
+            android:text="@string/activityDetailDomainsValue"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_country_values"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Ukraine"
-        android:textSize="20sp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_country"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:text="@string/activityDetailCountry"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_web"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="Web-pages:"
-        android:textSize="20sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_country_value"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginEnd="@dimen/activityDetailMargin"
+            android:text="@string/activityDetailCountryValue"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-    <TextView
-        android:id="@+id/text_view_details_web_values"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="http://www.stu.cn.ua/"
-        android:textSize="20sp">
-    </TextView>
+        <TextView
+            android:id="@+id/text_view_details_web"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:textStyle="bold"
+            android:text="@string/activityDetailWeb"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/text_view_details_web_values"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/activityDetailMargin"
+            android:layout_marginEnd="@dimen/activityDetailMargin"
+            android:text="@string/activityDetailWebValue"
+            android:textSize="@dimen/activityDetailTextSize">
+        </TextView>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
