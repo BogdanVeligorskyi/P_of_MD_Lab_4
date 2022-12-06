@@ -9,13 +9,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ListView;
-
 import com.google.gson.Gson;
-
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -30,6 +27,7 @@ import ua.cn.cpnu.pmp_lab_4.model.RemoteUniversity;
 import ua.cn.cpnu.pmp_lab_4.model.UniversitiesDao;
 import ua.cn.cpnu.pmp_lab_4.model.UniversitiesDatabase;
 
+// main activity class
 public class MainActivity extends AppCompatActivity {
 
     private final String BASE_URL = "http://universities.hipolabs.com/";
@@ -113,24 +111,22 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("HTTP_SUCCESS", "Successful response!");
                     remoteUniv = response.body();
                     assert remoteUniv != null;
-                    nameArray = new String[remoteUniv.size()];
-                    infoArray = new String[remoteUniv.size()];
-                    for (int i = 0; i < remoteUniv.size(); i++) {
+                    nameArray = new String[remoteUniv.size()/2];
+                    infoArray = new String[remoteUniv.size()/2];
+                    for (int i = 0; i < remoteUniv.size()/2; i++) {
                         nameArray[i] = remoteUniv.get(i).getName();
                         infoArray[i] = remoteUniv.get(i).getCountry();
-                        //Log.d("Univer... ", remoteUniv.get(i).getName());
-
                     }
                     handler.post(() -> {
                         updateDb();
                         cla = new CustomListAdapter(mainActivity, nameArray, infoArray);
                         listView.setAdapter(cla);
                     });
-                    //call.cancel();
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<List<RemoteUniversity>> call, @NonNull Throwable t) {
+                public void onFailure(@NonNull Call<List<RemoteUniversity>> call,
+                                      @NonNull Throwable t) {
                     Log.d("HTTP_FAIL",
                         "Looks like your Internet is not stable, but we`ll check database...");
                     findInDb();
@@ -175,18 +171,19 @@ public class MainActivity extends AppCompatActivity {
             UniversitiesDao dao = db.getUniversitiesDao();
             dao.deleteAll();
 
-            for (int i = 0; i < remoteUniv.size(); i++) {
+            // write arrays to db as strings separated by '|'
+            for (int i = 0; i < remoteUniv.size()/2; i++) {
                 String[] domainsArr = remoteUniv.get(i).getDomains();
-                String domainsStr = "";
-                for(int j = 0; j < domainsArr.length; j++) {
-                    domainsStr += domainsArr[j];
+                String domainsStr = domainsArr[0];
+                for(int j = 1; j < domainsArr.length; j++) {
                     domainsStr += "|";
+                    domainsStr += domainsArr[j];
                 }
                 String[] webArr = remoteUniv.get(i).getWebPages();
-                String webStr = "";
-                for(int j = 0; j < webArr.length; j++) {
-                    webStr += webArr[j];
+                String webStr = webArr[0];
+                for(int j = 1; j < webArr.length; j++) {
                     webStr += "|";
+                    webStr += webArr[j];
                 }
                 LocalUniversity univ = new LocalUniversity(remoteUniv.get(i).getAlphaTwoCode(),
                         remoteUniv.get(i).getCountry(),

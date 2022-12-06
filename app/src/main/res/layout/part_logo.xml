@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/appTitleMargin"
-        android:text="Universities of Ukraine"
+        android:text="@string/appName"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:textSize="@dimen/appNameTextSize"

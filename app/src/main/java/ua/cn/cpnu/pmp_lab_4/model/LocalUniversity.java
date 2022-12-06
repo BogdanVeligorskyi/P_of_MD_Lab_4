@@ -3,9 +3,10 @@ package ua.cn.cpnu.pmp_lab_4.model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+// class for representing University entity loaded from
+// a local database
 @Entity(tableName = "universities")
 public class LocalUniversity {
     @PrimaryKey(autoGenerate = true)
@@ -28,7 +29,6 @@ public class LocalUniversity {
     public LocalUniversity(String alphaTwoCode,
                            String country, String stateProvince, String domains,
                            String name, String webPages) {
-        //this.identifier = identifier;
         this.alphaTwoCode = alphaTwoCode;
         this.country = country;
         this.stateProvince = stateProvince;
